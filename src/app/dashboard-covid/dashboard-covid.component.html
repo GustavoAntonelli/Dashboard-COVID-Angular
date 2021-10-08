@@ -1,13 +1,21 @@
-<p>dashboard-covid works!</p>
 <form #myform="ngForm">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+
     <select name="month" id="month" [(ngModel)]="selected_month">
         <option *ngFor="let informacao of casosMensais" [value]="informacao.month">
             {{informacao.month}}
         </option>
-    </select>
+    </select><br>
     <input type="number" name="cases" id="cases" placeholder="Digite novo numero" [(ngModel)]="cases"
-        (change)="atualizaNovosCasos()">
-    <p>{{selected_cases}}</p>
+        (keyup)="atualizaNovosCasos()">
+
+</div>
+<div class="col-lg-6">
 
     <div id="pie_chart"></div>
+
+</div></div></div>
 </form>
